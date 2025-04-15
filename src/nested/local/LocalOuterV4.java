@@ -2,7 +2,7 @@ package nested.local;
 
 import java.lang.reflect.Field;
 
-public class LocalOuterV3 {
+public class LocalOuterV4 {
 
   private int outInstanceVar = 3;
 
@@ -25,11 +25,14 @@ public class LocalOuterV3 {
     }
 
     LocalPrinter printer = new LocalPrinter();
+    // 만약 localVar의 값을 변경한다면? 다시 캡처해야 하나??
+    // localVar = 10;
+    // paramVar = 20;
     return printer;
   }
 
   public static void main(String[] args) {
-    LocalOuterV3 localOuter = new LocalOuterV3();
+    LocalOuterV4 localOuter = new LocalOuterV4();
     Printer printer = localOuter.process(2);
     // process()의 스택 프레임이 사라진 이후에 실행
     printer.print();
